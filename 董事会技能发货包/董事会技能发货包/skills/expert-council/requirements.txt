@@ -1,0 +1,2 @@
+# No Python package install required.
+# This renderer uses the local Google Chrome headless export path.

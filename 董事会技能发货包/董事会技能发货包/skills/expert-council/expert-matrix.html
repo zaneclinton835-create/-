@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Expert Council · 专家选配矩阵</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: #faf8f5;
+    color: #1a0a0a;
+    padding: 28px 32px;
+    width: 860px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #191919;
+    padding-bottom: 10px;
+  }
+  .title {
+    font-family: "Playfair Display", "Noto Serif SC", serif;
+    font-size: 17pt;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #1a0a0a;
+  }
+  .subtitle {
+    font-size: 9pt;
+    color: #8f8a80;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .legend {
+    display: flex;
+    gap: 18px;
+    font-size: 9pt;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #5d5d5d;
+  }
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .dot-primary { background: #722f37; }
+  .dot-secondary { background: #a05060; }
+  .dot-none { background: #e5dfd4; border: 1px solid #c9c1b6; }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 10pt;
+  }
+  /* Row labels */
+  .row-label {
+    text-align: left;
+    padding-right: 14px !important;
+    font-size: 10pt;
+    color: #5d5d5d;
+    width: 72px;
+  }
+  /* Expert header cells */
+  .expert-cell {
+    padding: 8px 4px 6px !important;
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: #1a0a0a;
+    vertical-align: bottom;
+    border-bottom: 1.5px solid #191919;
+  }
+  .expert-cell span {
+    display: block;
+    font-size: 7.5pt;
+    font-weight: 400;
+    color: #8f8a80;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  /* Domain label column */
+  .domain-cell {
+    padding: 10px 12px 10px 0 !important;
+    text-align: left;
+    font-size: 10pt;
+    color: #3a2a2a;
+    border-bottom: 1px solid #e5dfd4;
+    white-space: nowrap;
+  }
+  /* Matrix dots */
+  .matrix-cell {
+    border-bottom: 1px solid #e5dfd4;
+    padding: 10px 4px !important;
+  }
+  .dot-cell {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  .primary { background: #722f37; }
+  .secondary { background: #a05060; }
+  .none { background: #e5dfd4; }
+
+  /* Selected combos preview */
+  .combos {
+    margin-top: 22px;
+    border-top: 1.5px solid #191919;
+    padding-top: 14px;
+  }
+  .combos-title {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #722f37;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .combo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .combo-card {
+    background: #ffffff;
+    border: 1px solid #e5dfd4;
+    border-top: 2.5px solid #722f37;
+    padding: 9px 11px;
+  }
+  .combo-scenario {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #1a0a0a;
+    margin-bottom: 4px;
+  }
+  .combo-experts {
+    font-size: 8.5pt;
+    color: #5d5d5d;
+    line-height: 1.6;
+  }
+  .combo-experts strong {
+    color: #722f37;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="title">Expert Council · 专家选配矩阵</div>
+    <div class="subtitle">按场景选专家 — 选 3 位即可发起董事会</div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="dot dot-primary"></div>主力专家</div>
+    <div class="legend-item"><div class="dot dot-secondary"></div>辅助专家</div>
+    <div class="legend-item"><div class="dot dot-none"></div>不推荐</div>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th class="row-label"></th>
+      <th class="expert-cell">查理·芒格<span>激励 · 认知偏误</span></th>
+      <th class="expert-cell">埃隆·马斯克<span>第一性原理 · 极限执行</span></th>
+      <th class="expert-cell">纳西姆·塔勒布<span>尾部风险 · 反脆弱</span></th>
+      <th class="expert-cell">瑞·达利欧<span>系统机器 · 原则</span></th>
+      <th class="expert-cell">乔治·索罗斯<span>反射性 · 博弈</span></th>
+      <th class="expert-cell">吴恩达<span>AI落地 · 工作流</span></th>
+      <th class="expert-cell">大野耐一<span>精益制造 · JIT</span></th>
+      <th class="expert-cell">张小龙<span>产品克制 · 人性</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="domain-cell">战略 / 商业</td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+    </tr>
+    <tr>
+      <td class="domain-cell">创业 / 执行</td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+    </tr>
+    <tr>
+      <td class="domain-cell">风险 / 周期</td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+    </tr>
+    <tr>
+      <td class="domain-cell">AI / 产品</td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+    </tr>
+    <tr>
+      <td class="domain-cell">运营 / 流程</td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+    </tr>
+    <tr>
+      <td class="domain-cell">个人成长</td>
+      <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="combos">
+  <div class="combos-title">推荐三人组合 · 按场景</div>
+  <div class="combo-grid">
+    <div class="combo-card">
+      <div class="combo-scenario">战略方向</div>
+      <div class="combo-experts"><strong>芒格</strong> · <strong>达利欧</strong> · 索罗斯</div>
+    </div>
+    <div class="combo-card">
+      <div class="combo-scenario">创业落地</div>
+      <div class="combo-experts"><strong>马斯克</strong> · <strong>大野耐一</strong> · 吴恩达</div>
+    </div>
+    <div class="combo-card">
+      <div class="combo-scenario">风险检验</div>
+      <div class="combo-experts"><strong>塔勒布</strong> · <strong>芒格</strong> · 达利欧</div>
+    </div>
+    <div class="combo-card">
+      <div class="combo-scenario">AI 产品</div>
+      <div class="combo-experts"><strong>吴恩达</strong> · <strong>张小龙</strong> · 马斯克</div>
+    </div>
+    <div class="combo-card">
+      <div class="combo-scenario">运营效率</div>
+      <div class="combo-experts"><strong>大野耐一</strong> · <strong>达利欧</strong> · 张小龙</div>
+    </div>
+    <div class="combo-card">
+      <div class="combo-scenario">独立开发</div>
+      <div class="combo-experts"><strong>马斯克</strong> · <strong>塔勒布</strong> · 张小龙</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

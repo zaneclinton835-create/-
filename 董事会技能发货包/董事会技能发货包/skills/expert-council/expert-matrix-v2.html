@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Expert Council · 完整专家版图</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: #faf8f5;
+    color: #1a0a0a;
+    padding: 28px 32px;
+    width: 1000px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #191919;
+    padding-bottom: 10px;
+  }
+  .title {
+    font-family: "Playfair Display", "Noto Serif SC", serif;
+    font-size: 17pt;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .subtitle { font-size: 9pt; color: #8f8a80; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 3px; }
+  .legend { display: flex; gap: 16px; font-size: 9pt; align-items: center; }
+  .legend-item { display: flex; align-items: center; gap: 5px; color: #5d5d5d; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-primary { background: #722f37; }
+  .dot-secondary { background: #a05060; }
+  .dot-none { background: #e5dfd4; border: 1px solid #c9c1b6; }
+
+  /* Big domain groups */
+  .domain-group {
+    margin-bottom: 20px;
+  }
+  .domain-group-title {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #722f37;
+    font-weight: 700;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e5dfd4;
+  }
+
+  table { border-collapse: collapse; width: 100%; margin-bottom: 6px; }
+  th, td { padding: 0; text-align: center; vertical-align: middle; font-size: 9pt; }
+  .row-label { text-align: left; padding-right: 12px !important; width: 80px; }
+  .expert-cell {
+    padding: 7px 3px 5px !important;
+    font-size: 9pt;
+    font-weight: 600;
+    vertical-align: bottom;
+    border-bottom: 1.5px solid #191919;
+  }
+  .expert-cell span {
+    display: block;
+    font-size: 7pt;
+    font-weight: 400;
+    color: #8f8a80;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+  .domain-cell {
+    padding: 8px 10px 8px 0 !important;
+    text-align: left;
+    font-size: 9.5pt;
+    color: #3a2a2a;
+    border-bottom: 1px solid #e5dfd4;
+  }
+  .matrix-cell { border-bottom: 1px solid #e5dfd4; padding: 8px 3px !important; }
+  .dot-cell { width: 12px; height: 12px; border-radius: 50%; margin: 0 auto; }
+  .primary { background: #722f37; }
+  .secondary { background: #a05060; }
+  .none { background: #e5dfd4; }
+
+  /* New experts section */
+  .new-section {
+    margin-top: 22px;
+    border-top: 2px solid #191919;
+    padding-top: 16px;
+  }
+  .section-label {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #722f37;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .expert-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .expert-card {
+    background: #ffffff;
+    border: 1px solid #e5dfd4;
+    border-top: 2.5px solid #722f37;
+    padding: 9px 10px;
+  }
+  .expert-card.secondary { border-top-color: #a05060; }
+  .card-name { font-size: 10pt; font-weight: 700; color: #1a0a0a; }
+  .card-domain { font-size: 7.5pt; color: #722f37; text-transform: uppercase; letter-spacing: 0.08em; margin: 3px 0 4px; }
+  .card-desc { font-size: 8.5pt; color: #5d5d5d; line-height: 1.55; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="title">Expert Council · 完整专家版图（扩编版）</div>
+    <div class="subtitle">16 位专家 · 8 大思维域 · 覆盖 90% 商业决策场景</div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="dot dot-primary"></div>主力专家</div>
+    <div class="legend-item"><div class="dot dot-secondary"></div>辅助专家</div>
+    <div class="legend-item"><div class="dot dot-none"></div>不推荐</div>
+  </div>
+</div>
+
+<!-- 认知与决策 -->
+<div class="domain-group">
+  <div class="domain-group-title">认知 · 决策 · 分析</div>
+  <table>
+    <thead>
+      <tr>
+        <th class="row-label"></th>
+        <th class="expert-cell">查理·芒格<span>认知偏误 · 激励结构</span></th>
+        <th class="expert-cell">丹尼尔·卡尼曼<span>行为经济学 · 有限理性</span></th>
+        <th class="expert-cell">赫布·西蒙<span>有限理性 · 决策科学</span></th>
+        <th class="expert-cell">瑞·达利欧<span>系统机器 · 原则复盘</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="domain-cell">战略方向</td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      </tr>
+      <tr>
+        <td class="domain-cell">风险/黑天鹅</td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      </tr>
+      <tr>
+        <td class="domain-cell">个人决策</td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 执行与资本 -->
+<div class="domain-group">
+  <div class="domain-group-title">执行 · 资本 · 创业</div>
+  <table>
+    <thead>
+      <tr>
+        <th class="row-label"></th>
+        <th class="expert-cell">埃隆·马斯克<span>第一性原理 · 极限执行</span></th>
+        <th class="expert-cell">巴菲特<span>护城河 · 资本配置</span></th>
+        <th class="expert-cell">大野耐一<span>流程浪费 · JIT</span></th>
+        <th class="expert-cell">吴恩达<span>AI落地 · 工作流</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="domain-cell">创业/执行</td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      </tr>
+      <tr>
+        <td class="domain-cell">资本/投资</td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      </tr>
+      <tr>
+        <td class="domain-cell">成本/效率</td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 风险与博弈 -->
+<div class="domain-group">
+  <div class="domain-group-title">风险 · 博弈 · 宏观</div>
+  <table>
+    <thead>
+      <tr>
+        <th class="row-label"></th>
+        <th class="expert-cell">纳西姆·塔勒布<span>尾部风险 · 反脆弱</span></th>
+        <th class="expert-cell">乔治·索罗斯<span>反射性 · 宏观博弈</span></th>
+        <th class="expert-cell">托马斯·谢林<span>博弈策略 · 谈判</span></th>
+        <th class="expert-cell">吴军<span>商业策略 · 中美市场</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="domain-cell">风险/周期</td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      </tr>
+      <tr>
+        <td class="domain-cell">博弈/谈判</td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+      </tr>
+      <tr>
+        <td class="domain-cell">竞争策略</td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 产品与设计 -->
+<div class="domain-group">
+  <div class="domain-group-title">产品 · 设计 · 用户</div>
+  <table>
+    <thead>
+      <tr>
+        <th class="row-label"></th>
+        <th class="expert-cell">张小龙<span>产品克制 · 人性</span></th>
+        <th class="expert-cell">史蒂夫·乔布斯<span>产品愿景 · 创造力</span></th>
+        <th class="expert-cell">唐·诺曼<span>设计思维 · UX</span></th>
+        <th class="expert-cell">塞思·戈丁<span>营销 · 定位</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="domain-cell">AI/产品</td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      </tr>
+      <tr>
+        <td class="domain-cell">产品愿景</td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+      </tr>
+      <tr>
+        <td class="domain-cell">营销/增长</td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+        <td class="matrix-cell"><div class="dot-cell none"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      </tr>
+      <tr>
+        <td class="domain-cell">用户/留存</td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell secondary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+        <td class="matrix-cell"><div class="dot-cell primary"></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 新增专家卡片 -->
+<div class="new-section">
+  <div class="section-label">新增专家 · 填补的关键空白</div>
+  <div class="expert-cards">
+
+    <div class="expert-card">
+      <div class="card-name">巴菲特</div>
+      <div class="card-domain">资本配置 / 护城河</div>
+      <div class="card-desc">填补财务视角空白。与芒格协同但不完全重叠：芒格检验认知，巴菲特检验资本效率。决策问：这个生意有没有护城河，资本是否在流向最高回报的地方？</div>
+    </div>
+
+    <div class="expert-card">
+      <div class="card-name">丹尼尔·卡尼曼</div>
+      <div class="card-domain">行为经济学 / 有限理性</div>
+      <div class="card-desc">填补决策黑箱。芒格知道人有哪些偏误，但卡尼曼知道这些偏误的计算结构和测量方法。决策问：我在哪个环节可能系统性误判，偏差方向是什么？</div>
+    </div>
+
+    <div class="expert-card">
+      <div class="card-name">托马斯·谢林</div>
+      <div class="card-domain">博弈策略 / 谈判</div>
+      <div class="card-desc">填补微观博弈空白。索罗斯给宏观，索罗斯给反射性，谢林给策略层。决策问：对手会如何反应，我的行动会改变对方的哪些预期和选择集？</div>
+    </div>
+
+    <div class="expert-card secondary">
+      <div class="card-name">塞思·戈丁</div>
+      <div class="card-domain">营销 / 定位</div>
+      <div class="card-desc">填补获客视角空白。当前董事会全是供给侧和产品侧视角。决策问：谁会真的愿意付钱，为什么选你不选其他，用户如何感知你的独特性？</div>
+    </div>
+
+    <div class="expert-card secondary">
+      <div class="card-name">赫布·西蒙</div>
+      <div class="card-domain">决策科学 / SAT</div>
+      <div class="card-desc">填补有限理性决策过程。芒格+卡尼曼都偏向诊断层，西蒙偏向决策过程层。决策问：给定我的信息有限性，什么是足够好的决策而非最优决策？</div>
+    </div>
+
+    <div class="expert-card secondary">
+      <div class="card-name">唐·诺曼</div>
+      <div class="card-domain">设计思维 / UX</div>
+      <div class="card-desc">填补用户交互层。产品不仅要好用，还要让人愿意用。决策问：用户如何理解这个产品，使用过程中的挫败感来自哪里？</div>
+    </div>
+
+    <div class="expert-card secondary">
+      <div class="card-name">史蒂夫·乔布斯</div>
+      <div class="card-domain">产品愿景 / 创造力</div>
+      <div class="card-desc">填补创造性破坏层。所有专家都是分析型，但乔布斯是创造型。决策问：有没有一种方式让用户想要他们现在还不知道自己想要的东西？</div>
+    </div>
+
+    <div class="expert-card secondary">
+      <div class="card-name">吴军</div>
+      <div class="card-domain">商业策略 / 中美市场</div>
+      <div class="card-desc">填补中文市场真实案例层。硅谷+中国市场双重视角，有独立开发者经验。决策问：这个方向在中美市场的竞争结构有什么本质差异？</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
